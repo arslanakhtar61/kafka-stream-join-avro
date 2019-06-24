@@ -1,0 +1,8 @@
+{
+  "namespace" : "com.sample.kafkastreamjoin.model_avro",
+  "type" : "record",
+  "name" : "OccupationKey",
+  "fields" : [
+    {"name":"id","type": "int"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "namespace" : "com.sample.kafkastreamjoin.model_avro",
+  "type" : "record",
+  "name" : "Occupation",
+  "fields" : [
+    {"name": "company",  "type": "string"},
+    {"name": "country",  "type": "string"}
+  ]
+}

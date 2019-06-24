@@ -1,0 +1,11 @@
+{
+  "namespace" : "com.sample.kafkastreamjoin.model_avro",
+  "type" : "record",
+  "name" : "SchoolKey",
+  "fields" : [
+    {"name":"name", "type": ["null", "string"]},
+    {"name":"country", "type": ["null", "string"]},
+    {"name":"city", "type": ["null", "string"]},
+    {"name":"id", "type": "int"}
+  ]
+}

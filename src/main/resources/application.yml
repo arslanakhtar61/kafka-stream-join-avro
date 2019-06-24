@@ -1,0 +1,87 @@
+spring.cloud.stream.bindings.school:
+  destination: school
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.school:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_1
+
+spring.cloud.stream.bindings.occupation:
+  destination: occupation
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.occupation:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_1
+
+spring.cloud.stream.bindings.person:
+  destination: person
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.person:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_2
+
+spring.cloud.stream.bindings.school_1:
+  destination: school
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.school_1:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_2
+
+spring.cloud.stream.bindings.school_2:
+  destination: school
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.school_2:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_3
+
+spring.cloud.stream.bindings.person_2:
+  destination: person
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.person_2:
+  consumer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_3
+
+spring.cloud.stream.bindings.subject:
+  destination: subject
+  contentType: application/*+avro
+  useNativeDecoding: true
+spring.cloud.stream.kafka.streams.bindings.subject:
+  producer:
+    keySerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+    application-id: stream-join-sample_diff_id_3
+
+spring.cloud.stream.kafka.streams.binder:
+  brokers: localhost
+  configuration:
+    schema.registry.url: http://localhost:8081
+    default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+    default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+    commit.interval.ms: 100
+
+spring.cloud.stream:
+    #  schema-registry-client:
+    #endpoint: http://localhost:8990
+    #    endpoint: http://localhost:8081
+  schema.avro:
+    schema-locations: classpath:avro/subjectKey.avsc
+#server.port: 9999
+
+spring.cloud.stream.kafka.streams.binder.configuration.application.server: localhost:8080
